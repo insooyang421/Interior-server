@@ -31,8 +31,8 @@ const productsController = require("./controllers/productsController.js")(db);
 app.use("/api/products", productsController);
 
 app.get("/",(req,res)=>{
-  res.send("home");
-  //res.redirect("/api/products")
+  //res.send("home");
+  res.redirect("/api/products")
 })
 
 app.get("/loadData",(req,res)=>{

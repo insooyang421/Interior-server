@@ -35,7 +35,7 @@ module.exports = class InteriorsDB {
 
   generateFakeProduct() {
     return new this.Product({
-      productId: faker.string.uuid(),
+      //productId: faker.string.uuid(),
       name: faker.commerce.productName(),
       description: faker.commerce.productDescription(),
       price: faker.commerce.price(0, 1000, 2),
@@ -51,11 +51,7 @@ module.exports = class InteriorsDB {
         {
           url: faker.image.url(),
           altText: faker.lorem.sentence(),
-        },
-        {
-          url: faker.image.url(),
-          altText: faker.lorem.sentence(),
-        },
+        }
       ],
       stockQuantity: faker.number.int({ min: 0, max: 1000 }),
       featured: faker.datatype.boolean(),

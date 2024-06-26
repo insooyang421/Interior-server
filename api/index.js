@@ -40,6 +40,15 @@ app.get("/loadData",(req,res)=>{
   db.loadData().then(()=>{
     console.log("fake data added successfully");
   }).catch(err=>{
-    console.log(err);
+    res.status(500).json({message: `An error ocurred in loadData: ${err}`});
   })  
 })
+
+app.use((req, res) => {
+  res.status(404).send('Page Not Found');
+});
+
+app.use(function (err, req, res, next) {
+  console.error(err.stack);
+  res.status(500).send('Something broke!');
+});

@@ -38,7 +38,7 @@ module.exports = class InteriorsDB {
       //productId: faker.string.uuid(),
       name: faker.commerce.productName(),
       description: faker.commerce.productDescription(),
-      price: faker.commerce.price(0, 1000, 2),
+      price: faker.commerce.price({min:0, max:1000, dec:2}),
       dimensions: {
         length: faker.number.int({ min: 0, max: 100 }),
         width: faker.number.int({ min: 0, max: 100 }),

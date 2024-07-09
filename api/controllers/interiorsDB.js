@@ -26,6 +26,10 @@ module.exports = class InteriorsDB {
     return this.Product.find().exec();
   }
 
+  getProductById(id){
+    return this.Product.findOne({_id: id}).exec();
+  }
+
   
   //Load data
   loadData(){  

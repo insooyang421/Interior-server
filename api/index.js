@@ -14,6 +14,8 @@ app.use(express.json());
 //variables
 const HTTP_PORT = process.env.PORT || 3000;
 
+app.set('json spaces', 2);
+
 //initialize db
 const db = new InteriorsDB();
 

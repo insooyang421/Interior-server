@@ -30,7 +30,14 @@ module.exports = class InteriorsDB {
     return this.Product.findOne({_id: id}).exec();
   }
 
-  
+  getProductByName(name){
+    return this.Product.findOne({name: name}).exec();
+  }
+
+  getAllProductIds(){
+    return this.Product.distinct('_id').exec();
+  }
+ 
   //Load data
   loadData(){  
     const fakeProducts = Array.from({ length: 20 }, ()=>this.generateFakeProduct());

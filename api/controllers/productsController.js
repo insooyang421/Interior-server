@@ -15,7 +15,7 @@ res.status(500).json({messages:`Error in getAll: ${err}`});
   router.get("/ids", function(req,res){
       db.getAllProductIds()
       .then(result => {
-          res.json({ids: result});
+          res.json(result);
           
       })
       .catch(err => {
